@@ -41,7 +41,7 @@ body, html {
   height: 667px;
   align-content: center;
   margin: 0 auto;
-  background-image: url(/space-tourism-website-main/starter-code/assets/home/background-home-mobile.jpg);
+  background-image: url(space-tourism-website-main/starter-code/assets/home/background-home-mobile.jpg);
 }
 
 h1, p {
