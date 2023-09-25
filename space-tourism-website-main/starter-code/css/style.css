@@ -1,45 +1,129 @@
 @charset "UTF-8";
-
-@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
+/* Versão Mobile First */
+
 :root {
-    --fontH1: 'Barlow Condensed', sans-serif;
-    --fontSpace: 'Bellefair', serif;
-    --fontText: 'Barlow', sans-serif;
+  --fontH1: 'Barlow Condensed', sans-serif;
+  --fontSpace: 'Bellefair', serif;
+  --fontText: 'Barlow', sans-serif;
+  --img_main: url(space-tourism-website-main/starter-code/assets/home/background-home-mobile.jpg);
+  --img_logo: url(space-tourism-website-main/starter-code/assets/shared/logo.svg);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
 }
 
 body, html {
-    line-height: 1.5;
-    min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+  width: 375px;
+  height: 667px;
+  align-content: center;
+  margin: 0 auto;
+  background-image: url(/space-tourism-website-main/starter-code/assets/home/background-home-mobile.jpg);
+}
+
+h1, p {
+  gap: 1rem;
+  text-align: center;
+  color: white;
 }
 
 h1 {
-    font-family: var(--fontH1);
-    font-size: 28px;
-    text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
-h2 {
-    font-family: var(--fontSpace);
-    font-size: 80px;
-    text-align: center;
-    line-height: 4.75;
+.space {
+  font-family: var(--fontSpace);
+  color: white;
+  font-size: 80px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 p {
-    font-family: var(--fontText);
-    font-size: 15px;
-    text-align: center;
+  font-family: var(--fontText);
+  font-size: 15px;
+  padding-top: 20px;
+}
+
+header {
+  /* display: flex; */
+}
+
+.logo {
+  margin: 2rem;
+}
+
+.primary-header {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  border: 1px solid red;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.primary-navegation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  margin-inline-end: 0.75em;
+}
+
+.primary-navegation a {
+  text-decoration: none;
+}
+
+.primary-header a > [aria-hidden="true"] {
+  font-weight: 700;
+  margin-inline-end: .5em;
+}
+
+/* .primary-navegation li {
+  display: inline;
+  margin-right: 10px;
+} */
+
+@media (max-width: 35em) {
+  .primary-navegation {
+    position: fixed;
+    inset: 0 0 0 40%;
+    right: 14%;
+    top: 122px;
+    background: steelblue;
+    width: 231px;
+    height: 665px;
+  }
 }
 
 
-.flex {
-    display: flex;
-    gap: var(--gap, 1rem);
-}
-
-.container {
-    padding: 0 2em;
-}
 
