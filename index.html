@@ -3,32 +3,35 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Adjust viewport settings as needed -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Space Tourism</title>
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+  <header class="primary-header flex">
+    <div>
+      <img class="logo" src="space-tourism-website-main/starter-code/assets/shared/logo.svg">
+    </div>
+    <button class="menu-button" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="primary-navigation">
+      <ul>
+        <li><a href="#"><span aria-hidden="true">00</span>Home</a></li>
+        <li><a href="#"><span aria-hidden="true">01</span>Destination</a></li>
+        <li><a href="#"><span aria-hidden="true">02</span>Crew</a></li>
+        <li><a href="#"><span aria-hidden="true">03</span>Technology</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <div class="container-main">
-    <header class="primary-header flex">
-      <div>
-        <img class="logo" src="space-tourism-website-main/starter-code/assets/shared/logo.svg">
-      </div>
-
-      <nav>
-        <ul class="primary-navegation">
-          <li><a><span aria-hidden="true">00</span>Home</a></li>
-          <!-- <span aria-hidden="true">00</span> usamos para que não seja lido em voz alta -->
-          <li><a><span aria-hidden="true">01</span>Destination</a></li>
-          <li><a><span aria-hidden="true">02</span>Crew</a></li>
-          <li><a><span aria-hidden="true">03</span>Technology</a></li>
-        </ul>
-      </nav>
-    </header>
-
     <main>
       <h1>
-        So, you want to travel to <span class="space font-size">Space</span> 
+        So, you want to travel to <span class="space font-size">Space</span>
       </h1>
       <p class="text">
         Let’s face it; if you want to go to space, you might as well genuinely go to

@@ -12,22 +12,87 @@
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-}
-
-.flex {
-  display: flex;
-  gap: var(--gap, 1rem);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body, html {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  background-color: #111; /* Cor de fundo para melhorar a legibilidade */
+  background-image: url(home/background-home-mobile.jpg);
+  background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+  background-position: center; /* Centraliza a imagem na tela */
   color: white;
+  font-family: var(--fontText);
+  width: 100%;
+  height: 100%;
+}
+
+.primary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  background-color: #333; /* Cor de fundo do cabeçalho */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Certifica-se de que o cabeçalho está acima de outros conteúdos */
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-button {
+  display: none; /* Oculta o botão de menu em telas maiores */
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.menu-button span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  margin: 6px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.primary-navigation {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background-image: url(home/background-home-mobile.jpg);
+  background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+  background-position: center; /* Centraliza a imagem na tela */
+  width: 100%;
+  height: 100vh; /* Define a altura para ocupar toda a tela verticalmente */
+}
+
+.primary-navigation ul {
+  list-style: none;
+  display: flex;
+}
+
+.primary-navigation li {
+  margin-right: 20px;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .container-main {
@@ -35,91 +100,63 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  flex-wrap: wrap;
-  width: 375px;
-  height: 667px;
-  align-content: center;
-  margin: 0 auto;
-  background-image: url(space-tourism-website-main/starter-code/assets/home/background-home-mobile.jpg);
-}
-
-h1, p {
-  gap: 1rem;
+  flex-grow: 1;
+  padding: 80px 20px; /* Espaçamento para evitar sobreposição com o cabeçalho */
   text-align: center;
-  color: white;
+
+  background-repeat: no-repeat;
 }
 
 h1 {
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .space {
   font-family: var(--fontSpace);
   color: white;
-  font-size: 80px;
-  text-align: center;
+  font-size: 40px;
   text-transform: uppercase;
 }
 
 p {
-  font-family: var(--fontText);
   font-size: 15px;
   padding-top: 20px;
 }
 
-.logo {
-  margin: 2rem;
-}
+@media (max-width: 768px) {
+  .menu-button {
+    display: block; /* Mostra o botão de menu em telas menores */
+  }
 
-.primary-header {
-  position: absolute;
-  top: 0px;
-  display: flex;
-  width: 100%;
-  height: 80px;
-  border: 1px solid red;
-  justify-content: space-between;
-  align-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-}
+  .primary-navigation {
+    display: none; /* Oculta o menu de navegação em telas menores */
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
 
-.primary-navegation {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-weight: 700;
-  margin-inline-end: 0.75em;
-}
+     /* Cor de fundo do menu de navegação */
+    width: 100%;
+  }
 
-.primary-navegation a {
-  text-decoration: none;
-}
+  .primary-navigation.open {
+    display: flex; /* Mostra o menu de navegação ao clicar no botão de menu */
+  }
 
-.primary-header a > [aria-hidden="true"] {
-  font-weight: 700;
-  margin-inline-end: .5em;
-}
+  .primary-navigation li {
+    margin: 10px 0;
+  }
 
-/* .primary-navegation li {
-  display: inline;
-  margin-right: 10px;
-} */
+  .menu-button.open span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
 
-@media (max-width: 35em) {
-  .primary-navegation {
-    position: fixed;
-    inset: 0 0 0 40%;
-    right: 14%;
-    top: 122px;
-    background: steelblue;
-    width: 231px;
-    height: 665px;
+  .menu-button.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-button.open span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
   }
 }
-
-
-
